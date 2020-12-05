@@ -22,4 +22,4 @@ def test_constructor():
 
 def test_alphabet():
     s= source.Source(base_string = 'aeiouaeoiuaeoaiue')
-    assert s.get_alphabet() == ['a','e','i','o','u']
+    assert s.get_alphabet() == {'a','e','i','o','u'}

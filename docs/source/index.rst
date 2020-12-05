@@ -10,6 +10,7 @@ Welcome to UnCodeGL's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   UnCodeGL
    modules
 
 

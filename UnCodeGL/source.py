@@ -4,7 +4,9 @@ class Source:
     of each simbol it can generate
 
     Attributes:
-        dictionary: dictionary of probabilities
+        dictionary: 
+            Dictionary of probabilities. The keys are the source simbols 
+            and the values the probabilities
 
     Initialization can be done through dictionary or base_string
     but not both
@@ -51,10 +53,9 @@ class Source:
         Returns list with simbols of the source
         """
         if self.__alphabet == None :
-            self.__alphabet = []
+            self.__alphabet = set()
             for simbol in self.dictionary :
-                self.__alphabet.append(simbol)
-            self.__alphabet = sorted(self.__alphabet)
+                self.__alphabet.add(simbol)
         return self.__alphabet
     
     def get_simbol_prob(simbol):
