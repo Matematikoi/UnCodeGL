@@ -12,7 +12,7 @@
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../UnCodeGL/'))
+sys.path.insert(0, os.path.abspath('../../UnCodeGL/'))
 
 
 # -- Project information -----------------------------------------------------
@@ -22,7 +22,7 @@ copyright = '2020, Gabriel Octavio Lozano Pinzón'
 author = 'Gabriel Octavio Lozano Pinzón'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.2'
+release = '0.0.4'
 
 
 # -- General configuration ---------------------------------------------------

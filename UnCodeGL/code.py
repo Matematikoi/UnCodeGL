@@ -122,7 +122,7 @@ class Code:
         epsilon = 0.00001
         for l in words_length:
             metric += float(arity)**float(-l)
-        return metric, metric + epsilon < 1
+        return metric, metric + epsilon <= 1
 
     
     def get_code_trie(self):
@@ -180,6 +180,15 @@ class Code:
             self.is_uniquely_decodable = len( self.__C_infty & self.__C_n[0] ) == 0
             
         return self.is_uniquely_decodable
+    
+    def get_C_n(self):
+        """Returns C_n related to the uniquely decodable algorithm.
+        
+        Returns:
+            List of set of words. 
+        """
+        self.is_uniquely_decodable()
+        return self.__C_n
             
     def encode(self, sentence):
         """"Encodes a given sentence

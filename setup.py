@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(name='UnCodeGL',
-      version='0.0.2',
+      version='0.0.4',
       description='Library for Coding Theory',
       author= 'Gabriel Octavio Lozano Pinzon',
       author_email="golozanop@unal.edu.co",
