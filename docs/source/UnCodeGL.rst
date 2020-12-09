@@ -1,6 +1,14 @@
 UnCodeGL package
 ================
 
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   UnCodeGL.data_structures
+
 Submodules
 ----------
 
