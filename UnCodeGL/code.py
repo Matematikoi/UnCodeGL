@@ -298,9 +298,9 @@ class Code:
 
         base_nodes  = [(probability, word) for word,probability in source.dictionary.items()]
         arity = len(code_alphabet)
-
-        while len(base_nodes)  % arity != 1 :
-            base_nodes.append((float(0), ''))
+        if arity != 2:
+            while len(base_nodes)  % (arity-1) != 1 :
+                base_nodes.append((float(0), ''))
         huffman = Huffman_Generator(simbols = code_alphabet, base_nodes = base_nodes, arity = len(code_alphabet))
 
         return Code(huffman.make_huffman_code())
