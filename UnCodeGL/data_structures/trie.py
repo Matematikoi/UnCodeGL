@@ -15,9 +15,19 @@ class Trie:
     See more in :
     https://en.wikipedia.org/wiki/Trie#:~:text=In%20computer%20science%2C%20a%20trie,the%20keys%20are%20usually%20strings.
     """
-    def __init__(self, simbols): 
+
+    def __init__(self, simbols, **kwargs):
+        """"Inits the Trie
+        
+        If given optional parameter words, then it
+        creates a Trie with given words inserted.
+        """
         self.simbols = simbols
         self.root = self.getNode() 
+
+        if  'words' in kwargs :
+            for word in kwargs['words'] :
+                self.insert(word)
   
     def getNode(self): 
         """Returns new trie node (initialized to NULLs) """
@@ -71,3 +81,29 @@ class Trie:
                 return False
 
         return True
+    
+    def complete_word(self, word):
+        """Finds if there is a way to complete the word
+        to make it belong to the Trie
+        """
+        result  =  set()
+
+        current_node = self.root 
+        for simbol in word: 
+            if not current_node.children[simbol]: 
+                return result
+            current_node = current_node.children[simbol] 
+  
+        if current_node == None :
+            return result
+        q = queue.Queue()
+        q.put( (current_node, "") )
+        while not q.empty() :
+            current_node, acum_str = q.get()
+            for simbol in self.simbols:
+                if current_node.children[simbol]  != None:
+                    q.put((current_node.children[simbol], acum_str + simbol))
+            if acum_str != "" and current_node.is_end_of_word:
+                result.add(acum_str)
+
+        return result

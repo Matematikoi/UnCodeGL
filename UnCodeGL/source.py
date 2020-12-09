@@ -67,6 +67,19 @@ class Source:
             return dictionary[simbol]
         return default
 
+    def get_entropy(self):
+        """Calculates entropy of the source
+
+        Entropy is given by 
+
+        .. math::
+                -\sum_{i} p(x_i)\log(p(x_i)) 
+        
+        Returns:
+            Float with the value of the entropy.
+        """
+        total = 0.0
+
 
 def make_dictionary_from_str(base_string):
     """Makes a dictionary with probabilities normalized"""
