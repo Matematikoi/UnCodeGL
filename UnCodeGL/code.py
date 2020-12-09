@@ -122,7 +122,7 @@ class Code:
         epsilon = 0.00001
         for l in words_length:
             metric += float(arity)**float(-l)
-        return metric, metric + epsilon <= 1
+        return metric, metric - epsilon <= 1
 
     
     def get_code_trie(self):
